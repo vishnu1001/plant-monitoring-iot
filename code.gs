@@ -1,13 +1,14 @@
-function doGet(e) { 
+function doGet(e) 
+{ 
   Logger.log( JSON.stringify(e) );
   var result = 'Ok';
-  if (e.parameter == 'undefined') {
+  if (e.parameter == 'undefined') 
+  {
     result = 'No Parameters';
   }
-  else {
-    
-    // Spreadsheet ID
-    var sheet_id = 'Google Spreadsheet ID';
+  else 
+  {  
+    var sheet_id = 'Google Spreadsheet ID'; // Spreadsheet ID
     var sheet = SpreadsheetApp.openById(sheet_id).getActiveSheet();
     var newRow = sheet.getLastRow() + 1;						
     var rowData = [];
@@ -20,11 +21,13 @@ function doGet(e) {
     // Time in column B
     rowData[1] = Curr_Time; 
     
-    for (var param in e.parameter) {
+    for (var param in e.parameter) 
+    {
       Logger.log('In for loop, param=' + param);
       var value = stripQuotes(e.parameter[param]);
       Logger.log(param + ':' + e.parameter[param]);
-      switch (param) {
+      switch (param) 
+      {
         // Temperature in column C
         case 'temperature':
           rowData[2] = value; 
@@ -55,6 +58,9 @@ function doGet(e) {
   }
   return ContentService.createTextOutput(result);
 }
-function stripQuotes( value ) {
+
+function stripQuotes( value ) 
+{
   return value.replace(/^["']|['"]$/g, "");
 }
+
