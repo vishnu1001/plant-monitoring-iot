@@ -21,13 +21,7 @@ const int time_delay = 1000;            // ms [1 hr = 3600000 ms]
 
 //########################################################################################################################################
 
-// Spreadsheet URL: https://docs.google.com/spreadsheets/d/14PjKcC8FEWMD4dB7YXsiVevIiIT5Tw1oTCTSLgOa1zs/edit#gid=0
-// Spreadsheet ID : 14PjKcC8FEWMD4dB7YXsiVevIiIT5Tw1oTCTSLgOa1zs
-
-// Script URL     : https://script.google.com/macros/s/AKfycbxrYReAfTd8BO_J945sMkIqeL0jw4eZrU8qoS8hz8B5XR6rb8sPlRsC3y3AIaZSV0U/exec
-// Deployment ID  : AKfycbxrYReAfTd8BO_J945sMkIqeL0jw4eZrU8qoS8hz8B5XR6rb8sPlRsC3y3AIaZSV0U
-
-String scriptUrl = "https://script.google.com/macros/s/AKfycbxrYReAfTd8BO_J945sMkIqeL0jw4eZrU8qoS8hz8B5XR6rb8sPlRsC3y3AIaZSV0U/exec";
+String scriptUrl = "Google Appscript Script URL";
 
 //########################################################################################################################################
 
@@ -72,6 +66,7 @@ void moist_readings(int* percentage )
 {
   // Capacitive Soil Moisture Sensor v1.2 Readings:
 
+  // Calibrate the sensor low(wet) and high(dry) values:
   const int wet = 2250; // Low
   const int dry = 4095; // High
 
